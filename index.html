@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(218, 186, 211);
+        }
+        .container{
+            /* border: 1px solid; */
+            text-align: center;
+            padding: 10px;
+            margin-top: 18%;
+            margin-left: 33%;
+            width: 30%;
+            background-color: rgb(108, 2, 66);
+            border-radius: 5cap;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <h1 id="dis">0</h1>
+        <button id="add">add</button>
+        <button id="del">delete</button>
+        <button id="rst">reset</button>
+    </div>
+    <script>
+        var container = document.getElementById("con")
+        var display = document.getElementById("dis");
+        var inc = document.getElementById("add");
+        var dlt = document.getElementById("del");
+        var reset = document.getElementById("rst");
+
+        container.classList.add("container")
+        inc.style.background = "green"
+        dlt.style.background = "red"
+        reset.style.background = "yellow"
+
+        count = 0
+        inc.addEventListener("click",function(e){
+            e.preventDefault()
+            console.log(count)
+            display.innerText = ++count
+            console.log(count)
+        })
+        dlt.addEventListener("click",function(e){
+            e.preventDefault();
+            
+            if (count <= 0){
+                return
+            }
+            else{
+                display.innerText = --count
+                console.log(count)
+            }
+        })
+        reset.addEventListener("click",function(e){
+            e.preventDefault();
+            count = 0
+            display.innerText = count;
+            console.log(count)
+            
+        })
+    </script>
+</body>
+</html>
